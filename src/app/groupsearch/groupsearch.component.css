@@ -1,0 +1,10 @@
+.content{
+    margin-left: 20%;
+}
+.formgroup,label{
+    padding: 5px;
+}
+button{
+    padding: 2px;
+    margin-left:2px; 
+}

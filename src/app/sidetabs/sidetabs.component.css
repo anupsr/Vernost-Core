@@ -1,0 +1,43 @@
+ul{
+    list-style-type: none;
+}
+
+ul,li,a{
+    display: block;
+    text-decoration: none;
+    background-color: lightblue;
+    color:white;
+    padding:15px;
+    width:100%;
+}
+
+ul,li,a:hover{
+    background-color:blue;
+}
+ul,li,a.selected{
+    background-color:blue;
+}
+ul,li{
+    display: block;
+    background-color: inherit;
+    padding: 7px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+div.sidetab{ 
+    display: block;
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgb(44, 42, 42);
+    overflow-x: hidden;
+    padding-top: 60px;
+}
