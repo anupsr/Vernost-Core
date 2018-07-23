@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { GroupsearchComponent } from './groupsearch/groupsearch.component';
 import { SidetabsComponent } from './sidetabs/sidetabs.component';
 import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     GroupsearchComponent,
-    SidetabsComponent
+    SidetabsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

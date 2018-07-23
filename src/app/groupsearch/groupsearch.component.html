@@ -1,14 +1,15 @@
+<span style="float: right;">Welcome:{{un}}<button (click)="logout()">Logout</button></span>
 <div class="content">
   <h2>Search Group</h2>
   <form id="search">
     <div class="form-group" class="formgroup">
       <label>Group Name:</label>
-      <input type="text" id="group_nameid" name="group_nameid" [(ngModel)]="group_name">
+      <input type="text" id="group_nameid" (change)="test()" name="group_nameid" [(ngModel)]="group_name">
       <label>From Date:</label>
-      <input type="date" id="from_dateid" name="from_dateid"  [(ngModel)]="from_date">
+      <input type="date" id="from_dateid" (change)="test()" name="from_dateid"  [(ngModel)]="from_date">
       <label>To Date:</label>
-      <input type="date" id="to_dateid" name="to_dateid" [(ngModel)]="to_date">
-      <button type="button" (click)="groupSearch()">Search</button>
+      <input type="date" id="to_dateid" (change)="test()" name="to_dateid" [(ngModel)]="to_date">
+      <button type="button" id="search_btn" disabled  (click)="groupSearch()">Search</button>
       <button type="button" (click)="reset()">Reset</button>
 
     </div>

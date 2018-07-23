@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {GroupSearch} from '../searchService';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-groupsearch',
   templateUrl: './groupsearch.component.html',
@@ -14,12 +16,13 @@ export class GroupsearchComponent implements OnInit {
     fromdate:'',
     todate:'',
   };
-   group_name;
-   from_date;
-   to_date;
+   group_name:string="";
+   from_date:string="";
+   to_date:string="";
+   un:string="";
 
   searchresult:any=[];
-  constructor(private groupService:GroupSearch) { } 
+  constructor(private groupService:GroupSearch, private router:Router) { } 
   
   groupSearch(){
   
@@ -43,9 +46,29 @@ export class GroupsearchComponent implements OnInit {
     this.from_date='';
     this.to_date='';
     this.searchresult='';
+    this.test();
+  }
+ 
+  test(){
+    console.log("hello from test")
+    if(this.group_name=="" && this.from_date=="" && this.to_date==""){
+      console.log("hello from true");
+      ((document.getElementById('search_btn') as HTMLInputElement).disabled)=true;
+    }
+    else{
+      console.log("hello from false");
+      ((document.getElementById('search_btn') as HTMLInputElement).disabled)=false;
+    }
+  }
+
+  logout(){
+    localStorage.removeItem('useralias');
+    this.router.navigate(['\login']);
   }
 
   ngOnInit() {
-  }
+   this.test();
+   this.un =localStorage.getItem('useralias');
 
+  }
 }
